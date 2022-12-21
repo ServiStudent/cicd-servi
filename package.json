@@ -12,10 +12,14 @@
     "web-vitals": "^2.1.4"
   },
   "jest": {
-  "transformIgnorePatterns": [
-    "/node_modules/(?!@fullcalendar)"
-  ]
-},
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "testResultsProcessor": "jest-sonar-reporter",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ]
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -39,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest-sonar-reporter": "^2.0.0"
   }
 }
